@@ -28,6 +28,13 @@ if (downBtn) {
     changeSlide("down");
   });
 }
+document.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowUp") {
+    changeSlide("up");
+  } else if (event.key === "ArrowDown") {
+    changeSlide("down");
+  }
+});
 
 function changeSlide(direction) {
   if (direction === "up") {
@@ -55,9 +62,7 @@ function changeSlide(direction) {
       }
 
       if (sidebar instanceof HTMLElement) {
-        sidebar.style.transform = `translateY(${
-          activeSlideIndex * height
-        }px)`;
+        sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
       }
     }
   }
